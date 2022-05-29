@@ -26,7 +26,7 @@ namespace Taskman
             this.DataContext = new
             {
                 Source = File.ReadAllBytes(@"Images\android.png"),
-                ViewTop = SystemParameters.PrimaryScreenHeight - 220,
+                ViewTop = SystemParameters.PrimaryScreenHeight - 250,
                 ViewLeft = SystemParameters.PrimaryScreenWidth - 220
             };
             InitializeComponent();

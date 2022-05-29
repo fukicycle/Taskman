@@ -15,8 +15,16 @@
         Top="{Binding ViewTop}"
         Left="{Binding ViewLeft}"
         Topmost="True"
-        Title="Taskman" Height="200" Width="200">
+        FontSize="16"
+        Title="Taskman" Height="160" Width="160">
     <Grid>
-        <Image Source="{Binding Source}"/>
+        <Image Source="{Binding Source}" x:Name="mainImage"/>
+        <Popup IsOpen="{Binding ElementName=mainImage,Path=IsMouseOver,Mode=OneWay}" PopupAnimation="Slide" AllowsTransparency="True" Placement="Bottom">
+            <Grid>
+                <Border CornerRadius="10" Background="#E8FDD8" Padding="5">
+                    <TextBlock Name="msgTextBlock" Padding="5" Text="Be happy!"/>
+                </Border>
+            </Grid>
+        </Popup>
     </Grid>
 </Window>
