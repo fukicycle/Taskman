@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,18 @@ namespace Taskman
     {
         public MainWindow()
         {
+            this.DataContext = new
+            {
+                Source = File.ReadAllBytes(@"Images\android.png"),
+                ViewTop = SystemParameters.PrimaryScreenHeight - 220,
+                ViewLeft = SystemParameters.PrimaryScreenWidth - 220
+            };
             InitializeComponent();
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }
