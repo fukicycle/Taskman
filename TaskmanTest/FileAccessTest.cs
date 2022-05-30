@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using Taskman;
 
 namespace TaskmanTest
 {
@@ -7,8 +8,10 @@ namespace TaskmanTest
     public class FileAccessTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CanFileCreate()
         {
+            FileAccess fa = new FileAccess();
+            Assert.AreEqual(Const.RESULT_SUCCESS, fa.CreateFileOnCurrentDirectory("test1.txt", "test"));
         }
     }
 }
