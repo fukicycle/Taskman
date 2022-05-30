@@ -36,5 +36,30 @@ namespace Taskman
         {
             DragMove();
         }
+
+        private void MainWindowLoaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OverrideMsgMenuClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddMsgMenuClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void InformationMenuClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShutdownMenuClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

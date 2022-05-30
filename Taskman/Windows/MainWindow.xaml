@@ -16,9 +16,22 @@
         Left="{Binding ViewLeft}"
         Topmost="True"
         FontSize="16"
+        Loaded="MainWindowLoaded"
         Title="Taskman" Height="160" Width="160">
     <Grid>
-        <Image Source="{Binding Source}" x:Name="mainImage"/>
+        <Image Source="{Binding Source}" x:Name="mainImage">
+            <Image.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="メッセージ">
+                        <MenuItem Header="上書き" Click="OverrideMsgMenuClick"/>
+                        <MenuItem Header="追加" Click="AddMsgMenuClick"/>
+                    </MenuItem>
+                    <MenuItem Header="情報" Click="InformationMenuClick"/>
+                    <Separator />
+                    <MenuItem Header="終了" Click="ShutdownMenuClick"/>
+                </ContextMenu>
+            </Image.ContextMenu>
+        </Image>
         <Popup IsOpen="{Binding ElementName=mainImage,Path=IsMouseOver,Mode=OneWay}" PopupAnimation="Slide" AllowsTransparency="True" Placement="Bottom">
             <Grid>
                 <Border CornerRadius="10" Background="#E8FDD8" Padding="5">
